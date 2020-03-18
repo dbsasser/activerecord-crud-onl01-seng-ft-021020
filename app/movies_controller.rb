@@ -54,7 +54,7 @@ def can_find_by_multiple_attributes
   # title == "Title"
   # release_date == 2000
   # director == "Me"
-  Movie.find_by(attributes={})
+  Movie.find_by
 end
 
 def can_find_using_where_clause_and_be_sorted
@@ -66,9 +66,9 @@ end
 def can_be_found_updated_and_saved
   # Updtate the title "Awesome Flick" to "Even Awesomer Flick", save it, then return it
   Movie.create(title: "Awesome Flick")
-  __
-  __
-  __
+  movie = Movie.find_by(title: "Awesome Flick")
+  movie.update(title: "Even Awesomer Flick")
+  movie
 end
 
 def can_update_using_update_method
